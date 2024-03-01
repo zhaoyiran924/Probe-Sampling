@@ -11,8 +11,8 @@ export model=$1 # llama2 or vicuna
 export setup=$2 # behaviors or strings
 
 # Create results folder if it doesn't exist
-if [ ! -d "../results_spe" ]; then
-    mkdir "../results_spe"
+if [ ! -d "../results" ]; then
+    mkdir "../results"
     echo "Folder '../results' created."
 else
     echo "Folder '../results' already exists."
