@@ -23,13 +23,17 @@ Beyond the parameters of the original GCG, probe sampling necessitates the speci
 --config.filtered_set=xx
 ```
 
-## Models
+In addition, to combine probe sampling with simulated annealing, modify the `config.anneal` setting in the `./experiments/configs/template.py` file as shown below.
 
- 
+```python
+config.anneal=True
+```
+
+## Models 
 
 ### Target Models
 
-Address of the target model is set in `experiments/configs/`, where `/DIR` is the address that you store the model.
+The path to the target model should be specified in `./experiments/configs/`, with `/DIR` representing the directory where the model is stored.
 
 ```sh
   config.model_paths = [
@@ -42,7 +46,7 @@ Address of the target model is set in `experiments/configs/`, where `/DIR` is th
 
 ### Draft Model
 
-The address of the draft model is specified in `experiments/main.py`; replace `/DIR` with the directory path where the model is stored. Additionally, the GPU on which the model is placed is determined by the setting `params_small.devices`.
+The location of the draft model is defined in `./experiments/main.py`; replace `/DIR` with the directory path where the model is stored. Additionally, the GPU on which the draft model is placed is determined by the setting `params_small.devices`.
 
 ```python
 params_small.model_paths = ["/DIR/GPT2"]
@@ -55,14 +59,17 @@ params_small.devices = ['cuda:0']
 * To execute specific experiments involving harmful behaviors and strings, execute the code below within the `experiments` directory. Note that replacing `vicuna` with `llama2` and substituting `behaviors` with `strings` will transition to alternative experimental configurations:
 
   ```sh
-  cd launch_scripts
+  cd experiments/launch_scripts
   bash run_gcg_individual.sh vicuna behaviors
   ```
+  
+  Running this code will enable you to reproduce the results for the **'Human Strings'** dataset and the **'Human Behaviors'** dataset under **Individual** setting as presented in Table 1 of our paper. Specifically, in the context of the Individual Human Behaviors setting, when utilizing probe sampling without simulated annealing under the Llama2-7b-chat model, you will reproduce an ASR of 81.0 and 3.5 times speedup.
 
 - To perform multiple behaviors experiments, run the following code inside `experiments`:
 
   ```sh
-  cd launch_scripts
+  cd experiments/launch_scripts
   bash run_gcg_multiple.sh vicuna
   ```
-
+  
+  Running this code will enable you to reproduce the results for the **'Human Behaviors'** dataset under **Multiple** setting as presented in Table 1 of our paper. Specifically, in the context of the Multiple Human Behaviors setting, when utilizing probe sampling under the Llama2-7b-chat model, you will reproduce an ASR of 96.0 and 5.6 times speedup.
