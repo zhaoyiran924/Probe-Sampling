@@ -1,6 +1,6 @@
-# Accelerating Greedy Coordinate Gradient via Probe Sampling 
+# [NeurIPS 2024] Accelerating Greedy Coordinate Gradient and General Prompt Optimization via Probe Sampling 
 
-This repository contains code for the paper "[Accelerating Greedy Coordinate Gradient via Probe Sampling](https://arxiv.org/abs/2403.01251)". Below is the workflow of probe sampling.
+This repository contains code for the paper "[Accelerating Greedy Coordinate Gradient and General Prompt Optimization via Probe Sampling](https://arxiv.org/abs/2403.01251)". Below is the workflow of probe sampling.
 
 ![./](./probe-sampling.png)
 
