@@ -73,3 +73,17 @@ params_small.devices = ['cuda:0']
   ```
   
   Running this code will enable you to reproduce the results for the **'Human Behaviors'** dataset under **Multiple** setting as presented in Table 1 of our paper. Specifically, in the context of the Multiple Human Behaviors setting, when utilizing probe sampling under the Llama2-7b-chat model, you will reproduce an ASR of 96.0 and 5.6 times speedup.
+
+## Citation
+
+If you found this repository useful, please consider
+
+```latex
+@inproceedings{zhao2024accelerating,
+  title={Accelerating greedy coordinate gradient via probe sampling},
+  author={Zhao, Yiran and Zheng, Wenyue and Cai, Tianle and Do, Xuan Long and Kawaguchi, Kenji and Goyal, Anirudh and Shieh, Michael},
+  booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
+  year={2024}
+}
+```
+
